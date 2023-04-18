@@ -1,0 +1,24 @@
+{
+  "name": "birthday-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "candie",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.1.5",
+    "hpp": "^0.2.3",
+    "mongoose": "^7.0.4",
+    "slugify": "^1.6.6",
+    "validator": "^13.9.0",
+    "xss-clean": "^0.1.1"
+  }
+}
