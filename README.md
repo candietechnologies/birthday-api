@@ -20,6 +20,10 @@ this will fetch all the years from 1900 - 2010.
 
 NOTE: Years range from 1900 - 2023.
 
+MONTH return MONTHINDEX, MONTH ABBREVIATION & MONTH NAME
+
+DAYS return 1-31
+
 Request does not require any form of authentication.
 But there's an 100 requests per hour limit.
 
