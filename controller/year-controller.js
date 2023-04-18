@@ -12,7 +12,9 @@ exports.addYear = catchAsync(async (req, res, next) => {
 });
 
 exports.getAllYears = catchAsync(async (req, res, next) => {
-  const years = await Year.find();
+  const queryStr = req.query.min && { year: { $lte: req.query.min } };
+
+  const years = await Year.find(queryStr);
 
   return res.status(200).json({
     results: years.length,
