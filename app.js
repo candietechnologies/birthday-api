@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 const helmet = require("helmet");
 const hpp = require("hpp");
 const xss = require("xss-clean");
-// const rateLimit = require("express-rate-limit");
+const rateLimit = require("express-rate-limit");
 
 const globalErrorController = require("./controller/error-controller");
 const AppError = require("./util/app-error");
@@ -46,6 +46,14 @@ app.use(hpp());
 app.use(helmet());
 app.use(xss());
 app.use(cookieParser());
+
+// Limit requests from same IP
+const limiter = rateLimit({
+  max: 500,
+  windowMs: 60 * 60 * 1000,
+  message: "Too many requests from this IP, please try again in an hour!",
+});
+app.use("/api", limiter);
 
 app.get("/", (req, res) => {
   res.send("<h1>welcome to candie birthday free API</h1>");

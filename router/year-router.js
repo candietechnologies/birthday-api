@@ -7,12 +7,12 @@ const router = express.Router();
 
 router
   .route("/years")
-  .post(yearController.addYear)
+  // .post(yearController.addYear)
   .get(yearController.getAllYears);
 
 router
   .route("/months")
-  .post(monthController.addMonth)
+  // .post(monthController.addMonth)
   .get(monthController.getAllMonths);
 
 router.route("/days").post(dayController.addDay).get(dayController.getAllDays);
